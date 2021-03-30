@@ -1,4 +1,4 @@
-<!-- This repository contains the coursework submission for PyMeUpCharlie and for the following tasks:
+This repository contains the coursework submission for PyMeUpCharlie and for the following tasks:
 
 1) PyBank:
     Your task is to create a Python script that analyzes the records to calculate each of the following:
