@@ -45,6 +45,13 @@ financial_analysis = f'Financial Analysis\n-------------------------------\
 
 print(financial_analysis)
 
+
+output_file = os.path.join(dirname, "financial_analysis.txt")
+
+with open(output_file, "w") as f:
+    f.write(financial_analysis)
+
+
     #Original solution
     # print("Financial Analysis")
     # print("---------------------------------")
@@ -53,11 +60,6 @@ print(financial_analysis)
     # print(f"Average Change: ${round(pnl_avg_change,2)}")
     # print(f"Greatest Increase in profits: {month[max_value_index]} (${max_value})")
     # print(f"Greatest Decrease in profits: {month[min_value_index]} (${min_value})")
-
-output_file = os.path.join(dirname, "financial_analysis.txt")
-
-with open(output_file, "w") as f:
-    f.write(financial_analysis)
 
     #Original solution
     # f.write("Financial Analysis")

@@ -39,12 +39,15 @@ candidate_votes = []
 for candidates in candidates_list:
     candidate_votes.append(candidate.count(candidates))
 
+#printed and nested f-string for the calculation and printing of the candidates, % of votes and # of votes for each candidate [i] in list
 for i in range(len(candidates_list)):
     print(f"{candidates_list[i]}: {'{:.2%}'.format(candidate_votes[i]/total_votes_cast)} ({candidate_votes[i]} votes)")
 print("-----------------------------------")
 print(f"Winner: {candidates_list[candidate_votes.index(max(candidate_votes))]}")
 print("---------------------\n")
 
+
+#Output
 output_file = os.path.join(dirname, "election_results.txt")
 
 with open(output_file, "w") as f:
@@ -63,6 +66,6 @@ with open(output_file, "w") as f:
     f.write("\n")
     f.write(f"Winner: {candidates_list[candidate_votes.index(max(candidate_votes))]}")
     f.write("\n")
-f.close()
+    f.close()
 
 
