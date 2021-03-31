@@ -35,31 +35,45 @@ with open(pybank_csv, 'r') as csvfile:
     min_value = min(pnl_diff)
     min_value_index = pnl_diff.index(min_value)+1 #add one to index as differential calculation starts on row 1 of dataset
 
-    print("Financial Analysis")
-    print("---------------------------------")
-    print(f"Total Months: {len(month)}")
-    print(f"Total: ${sum(pnl)}")
-    print(f"Average Change: ${round(pnl_avg_change,2)}")
-    print(f"Greatest Increase in profits: {month[max_value_index]} (${max_value})")
-    print(f"Greatest Decrease in profits: {month[min_value_index]} (${min_value})")
+#create callable result function
+financial_analysis = f'Financial Analysis\n-------------------------------\
+    \nTotal Months: {len(month)}\
+    \nTotal: ${sum(pnl)}\
+    \nAverage Change: ${round(pnl_avg_change,2)}\
+    \nGreatest Increase in profits: {month[max_value_index]} (${max_value})\
+    \nGreatest Decrease in profits: {month[min_value_index]} (${min_value})'
+
+print(financial_analysis)
+
+    #Original solution
+    # print("Financial Analysis")
+    # print("---------------------------------")
+    # print(f"Total Months: {len(month)}")
+    # print(f"Total: ${sum(pnl)}")
+    # print(f"Average Change: ${round(pnl_avg_change,2)}")
+    # print(f"Greatest Increase in profits: {month[max_value_index]} (${max_value})")
+    # print(f"Greatest Decrease in profits: {month[min_value_index]} (${min_value})")
 
 output_file = os.path.join(dirname, "financial_analysis.txt")
 
 with open(output_file, "w") as f:
-    f.write("Financial Analysis")
-    f.write("\n")
-    f.write("---------------------------------")
-    f.write("\n")
-    f.write(f"Total Months: {len(month)}")
-    f.write("\n")
-    f.write(f"Total: ${sum(pnl)}")
-    f.write("\n")
-    f.write(f"Average Change: ${round(pnl_avg_change,2)}")
-    f.write("\n")
-    f.write(f"Greatest Increase in profits: {month[max_value_index]} (${max_value})")
-    f.write("\n")
-    f.write(f"Greatest Decrease in profits: {month[min_value_index]} (${min_value})")
-    f.close()
+    f.write(financial_analysis)
+
+    #Original solution
+    # f.write("Financial Analysis")
+    # f.write("\n")
+    # f.write("---------------------------------")
+    # f.write("\n")
+    # f.write(f"Total Months: {len(month)}")
+    # f.write("\n")
+    # f.write(f"Total: ${sum(pnl)}")
+    # f.write("\n")
+    # f.write(f"Average Change: ${round(pnl_avg_change,2)}")
+    # f.write("\n")
+    # f.write(f"Greatest Increase in profits: {month[max_value_index]} (${max_value})")
+    # f.write("\n")
+    # f.write(f"Greatest Decrease in profits: {month[min_value_index]} (${min_value})")
+    # f.close()
 
 # print(month[max_value_index]) #prints correct maximum month of pnl differential list
 # print(month[min_value_index]) #prints correct minimum month of pnl differential list
